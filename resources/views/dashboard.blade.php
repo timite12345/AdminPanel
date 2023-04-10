@@ -80,7 +80,7 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a href="{{ url('register') }}" class="nav-link">
+                <a href="{{ url('auth/register') }}" class="nav-link">
                   <i class="fa fa-user-plus"></i>
                   <p>Add User</p>
                 </a>
