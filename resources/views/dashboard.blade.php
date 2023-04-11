@@ -36,7 +36,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header">EXAMPLES</li>
-          <li class="nav-item">
+          {{--  <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
@@ -44,16 +44,16 @@
                 <span class="badge badge-info right">2</span>
               </p>
             </a>
-          </li>
+          </li>  --}}
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            {{--  <a href="#" class="nav-link">
               <i class="fas fa-envelope-open"></i>
               <p>
                 Mailbox
               </p>
-            </a>
+            </a>  --}}
               <li class="nav-item">
                 <a href="pages/mailbox/mailbox.html" class="nav-link">
                   <i class="fa fa-inbox"></i>
@@ -67,7 +67,7 @@
                 Pages
               </p>
             </a>
-              <li class="nav-item">
+              {{--  <li class="nav-item">
                 <a href="pages/examples/invoice.html" class="nav-link">
                   <i class="fa fa-user-circle"></i>
                   <p>Profile</p>
@@ -78,7 +78,7 @@
                   <i class="fa fa-user-circle"></i>
                   <p>Editer Profile</p>
                 </a>
-              </li>
+              </li>  --}}
                <li class="nav-item">
                 <a href="{{ url('auth/register') }}" class="nav-link">
                   <i class="fa fa-user-plus"></i>
