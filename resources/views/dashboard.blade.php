@@ -35,7 +35,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header"></li>
           {{--  <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
@@ -97,6 +97,13 @@
                   <p> Renseigner Mission</p>
                 </a>
               </li>
+               <li class="nav-item">
+                <a href="pages/examples/project-edit.html" class="nav-link">
+                  <i class="fa fa-ambulance"></i>
+                  <p> Renseigner Mission</p>
+                </a>
+              </li>
+
               <li class="nav-item">
                 <a href="pages/examples/contacts.html" class="nav-link">
                   <i class="fa fa-phone"></i>

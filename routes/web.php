@@ -3,6 +3,8 @@
 use App\Http\Controllers\AddNewChauffeur;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/auth/register',[AddNewChauffeur::class, "AddChauf"])->name('chauffeur.register');
 
 });
+
+Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
+Route::get('/AjouterMission',[Controller::class, "NewMission"])->name('NewMission');
 
 require __DIR__.'/auth.php';
