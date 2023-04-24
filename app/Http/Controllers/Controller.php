@@ -21,6 +21,15 @@ class Controller extends BaseController
     return view('AjouterMission', compact('users','etbsantes'));
 }
 
+
+public function show()
+    {
+        $missions = Missions::all();
+     return view('dashboard', compact('missions'));
+    }
+
+
+
  public function CreateNewMission(Request $request){
         $data['condTransp'] = $request->condTransp ;
         $data['nom'] = $request->nom ;
