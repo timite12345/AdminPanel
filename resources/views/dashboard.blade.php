@@ -181,9 +181,15 @@
         </div>
         <!-- /.row -->
 
+
 <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-2">
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+             <p class="bg-white-700 font-semibold text-lg text-gray-800 leading-tight">
+            Listes des Missions
+            <a href="{{ route('NewMission') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
+            font-bold py-1 px-2 rounded float-right">Ajouter nouvelles Missions</a>
+        </p>
             <table class="table-fixed">
               <thead>
                 <tr>
@@ -210,21 +216,9 @@
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
                           <a href="{{ route('Edit', $mission->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{ route('Edit', $mission->id) }}" role="button"
+                         <a href="{{route('Supprimer',$mission->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
-
-                      {{--  <td class=" px-4 py-3">
-                      <form id="destroy{{ $mission->id }}" action="{{ route('Mission.Supprimer', $mission->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <a role="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                          onclick="event.preventDefault();
-                          this.closest('form').submit();">
-                          Supprimer
-                        </a>
-                      </form>
-                    </td>  --}}
                   </tr>
                   @endforeach
               </tbody>
@@ -241,10 +235,10 @@
           <!-- /.col --
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2023 <a href="#">Ivoire Secours</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+      <b>Version</b> 1.0
     </div>
   </footer>
 </div>

@@ -35,22 +35,15 @@ Route::get('/AddNewChauffeur', function () {
 });
 
 
-Route::get('/Mission/Details', function () {
-    return view('Mission.Details');
-})->name('Details');
-
-Route::get('/Mission/Edit', function () {
-    return view('Mission.Edit');
-})->name('Edit');
-
+//
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::patch('/profile', [ProfileController::class, 'update1'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy1'])->name('profile.destroy');
     Route::post('/auth/register',[AddNewChauffeur::class, "AddChauf"])->name('chauffeur.register');
 
 });
@@ -58,8 +51,9 @@ Route::middleware('auth')->group(function () {
 Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 Route::get('/AjouterMission',[Controller::class, "NewMission"])->name('NewMission');
 Route::get('/Accueil',[Controller::class, "show"])->name('Accueil');
-
-//Route::get('/dashboard',[Controller::class, "show"]);
+Route::get('/Supprimer/{id}', [Controller::class, 'destroy'])->name('Supprimer');
+Route::get('/Modifier/{id}', [Controller::class, 'modifier'])->name('Edit');
+Route::get('/Voir/{id}', [Controller::class, 'voir'])->name('Details');
 
 
 require __DIR__.'/auth.php';

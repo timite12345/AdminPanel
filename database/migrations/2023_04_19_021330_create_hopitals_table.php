@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('hopitals', function (Blueprint $table) {
             $table->id();
+            $table->string('refEtb');
             $table->string('nom');
-            $table->string('prenom');
+            $table->string('adresse');
             $table->string('email');
-            $table->string('estUrgent');
-            $table->string('estFacture');
-            $table->string('date_Dep');
-            $table->string('adresse_Dep');
-            $table->string('condTransp');
+            $table->string('tel');
+            $table->string('estValide');
+            $table->string('type');
 
 
 

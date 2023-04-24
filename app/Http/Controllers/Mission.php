@@ -73,10 +73,10 @@ class Mission extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Missions $missions)
-    {
-          $missions->delete();
+    // public function destroy(Missions $missions)
+    // {
+    //       $missions->delete();
 
-        return back()->with('message',"L'achat supprimé avec succès");
-    }
+    //     return back()->with('message',"L'achat supprimé avec succès");
+    // }
 }

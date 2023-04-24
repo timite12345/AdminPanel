@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chauffeur;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -17,21 +18,52 @@ class Controller extends BaseController
 
     public function NewMission(){
     $users= User::all();
-    $etbsantes= Hopital::all();
-    return view('AjouterMission', compact('users','etbsantes'));
+    $hopitals= Hopital::all();
+    $chauffeurs=Chauffeur::all();
+    return view('AjouterMission', compact('users','hopitals','chauffeurs'));
 }
 
 
 public function show()
     {
-        $missions = Missions::all();
+        $missions = Missions::latest()->paginate(4);
      return view('dashboard', compact('missions'));
     }
 
+ public function destroy1($mission)
+    {
+        Missions::findOrFail($mission)->delete();
+        return back()->with('message',"L'achat supprimé avec succès");
+    }
 
+    public function modifier(Missions $missions)
+    {
+       // $missions = Missions::all();
+     return view('Mission.Edit', compact('missions'));
+    }
+
+    public function voir(Missions $missions)
+    {
+        $missions = Missions::all();
+     return view('Mission.Details', compact('missions'));
+    }
+
+ public function update1(Request $request, Missions $missions)
+    {
+        $request->validate([
+            'nom_client' => 'required',
+            'tel_client' => 'required',
+            'article_id' => 'required',
+            'nombre_article' => 'required',
+            'montant_article' => 'required',
+        ]);
+
+        $missions->update($request->all());
+
+        return back()->with('message','Achat modifié avec succès');
+    }
 
  public function CreateNewMission(Request $request){
-        $data['condTransp'] = $request->condTransp ;
         $data['nom'] = $request->nom ;
         $data['prenom'] = $request->prenom ;
         $data['email'] = $request->email ;
@@ -42,8 +74,10 @@ public function show()
         $data['estFacture'] = $request->estFacture ;
         $data['refEtb'] = $request->refEtb ;
         $data['idChauffeur'] = $request->idChauffeur ;
+        $data['condTransp'] = $request->condTransp ;
+
         Missions::create($data);
-        return redirect('/welcome');
+        return redirect('/Accueil');
     }
 
      public function CreateHopital(Request $request){
