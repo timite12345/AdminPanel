@@ -13,38 +13,39 @@
 <body class="form-v9">
 	<div class="page-content">
 		<div class="form-v9-content" style="background-image: url('images/form-v9.jpg')">
-			<form class="form-detail" action="#" method="post">
+			<form class="form-detail" action="{{route('addChauffeur')}}" method="POST">
+                @csrf
 				<h2>Registration Form</h2>
 				<div class="form-row-total">
 					<div class="form-row">
-						<input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
+						<input type="text" name="nom" id="full-name" class="input-text" placeholder="Nom" required>
 					</div>
 					<div class="form-row">
-						<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-					</div>
-				</div>
-                <div class="form-row-total">
-					<div class="form-row">
-						<input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
-					</div>
-					<div class="form-row">
-						<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+						<input type="text" name="prenom" id="your-email" class="input-text" placeholder="Prenom">
 					</div>
 				</div>
                 <div class="form-row-total">
 					<div class="form-row">
-						<input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
+						<input type="text" name="tel" id="full-name" class="input-text" placeholder="Tel" required>
 					</div>
 					<div class="form-row">
-						<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+						<input type="text" name="email" id="your-email" class="input-text" placeholder="Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+				</div>
+                <div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="adresse" id="full-name" class="input-text" placeholder="Adresse" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="permis" id="your-email" class="input-text" placeholder="Permis">
 					</div>
 				</div>
 				<div class="form-row-total">
-					<div class="form-row">
+					{{--  <div class="form-row">
 						<input type="password" name="password" id="password" class="input-text" placeholder="Your Password" required>
-					</div>
+					</div>  --}}
 					<div class="form-row">
-						<input type="password" name="comfirm-password" id="comfirm-password" class="input-text" placeholder="Comfirm Password" required>
+						<input type="text" name="estDisponible" id="comfirm-password" class="input-text" placeholder="estDisponible" required>
 					</div>
 				</div>
 				<div class="form-row-last">

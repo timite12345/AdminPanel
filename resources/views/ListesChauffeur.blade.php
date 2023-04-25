@@ -67,27 +67,29 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('AjouterMission') }}" class="nav-link">
+                <a href="{{ url('Accueil') }}" class="nav-link">
                   <i class="fa fa-ambulance"></i>
-                  <p> Gérer Mission</p>
+                  <p> Gérer Missions</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="{{ url('ListesChauffeur') }}" class="nav-link">
                   <i class="fa fa-user"></i>
-                  <p> Gérer Chauffeur</p>
+                  <p> Gérer Chauffeurs </p>
                 </a>
               </li>
-                 <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="fas fa-edit	"></i>
-                  <p> Gérer Factures</p>
+
+                <li class="nav-item">
+                <a href="{{ url('ListesChauffeur') }}" class="nav-link">
+                  <i class="fa fa-edit"></i>
+                  <p> Gérer Factures </p>
                 </a>
               </li>
-                 <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="fas fa-car-side	"></i>
-                  <p> Gérer Parc</p>
+
+                <li class="nav-item">
+                <a href="{{ url('ListesChauffeur') }}" class="nav-link">
+                  <i class="fa fa-car-side"></i>
+                  <p> Gérer Parc </p>
                 </a>
               </li>
 
@@ -185,9 +187,9 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-2">
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
              <p class="bg-white-700 font-semibold text-lg text-gray-800 leading-tight">
-            Listes des Missions
-            <a href="{{ route('NewMission') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
-            font-bold py-1 px-2 rounded float-right">Ajouter nouvelles Missions</a>
+            Listes des Chauffeurs
+            <a href="{{ url('AddNewChauffeur') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
+            font-bold py-1 px-2 rounded float-right">Ajouter Nouveau Chauffeur</a>
         </p>
             <table class="table-fixed">
               <thead>
@@ -195,27 +197,26 @@
                   <th class="px-4 py-2">Id</th>
                   <th class="px-4 py-2">Nom</th>
                   <th class="px-4 py-2">Prenom</th>
-                  <th class="px-4 py-2">estUrgent</th>
-                  <th class="px-4 py-2">date_Dep</th>
-                  <th class="px-4 py-2">adresse_Dep</th>
-                  <th class="px-4 py-2">Action</th>
+                  <th class="px-4 py-2">email</th>
+                  <th class="px-4 py-2">adresse</th>
+                  <th class="px-4 py-2">permis</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($missions as $mission)
+                @foreach($chauffeurs as $chauffeur)
                   <tr>
-                    <td class="select-none px-4 py-3">{{ $mission->id}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->nom }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->prenom}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->estUrgent }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->date_Dep }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->adresse_Dep }}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->id}}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->nom }}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->prenom}}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->email }}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->adresse }}</td>
+                    <td class="select-none px-4 py-3">{{ $chauffeur->permis }}</td>
                     <td class="px-4 py-3">
-                        <a href="{{ route('Details', $mission->id) }}" role="button"
+                        <a href="{{ route('Details', $chauffeur->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
-                          <a href="{{ route('Edit', $mission->id) }}" role="button"
+                          <a href="{{ route('Edit', $chauffeur->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{route('Supprimer',$mission->id)}}" role="button"
+                         <a href="{{route('Supprimer',$chauffeur->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>

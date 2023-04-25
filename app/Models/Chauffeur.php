@@ -9,9 +9,12 @@ class Chauffeur extends Model
 {
     use HasFactory;
      protected $fillable = [
-        'name',
+        'nom',
+        'prenom',
+        'tel',
         'email',
-        'password',
-        'confirmation_password',
+        'adresse',
+        'permis',
+        'estDisponible',
     ];
 }

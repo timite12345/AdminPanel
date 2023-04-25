@@ -74,7 +74,7 @@
       <div class="card-body">
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
-            <select name="adresse_Arriv" class="form-control select2" style="width: 100%;">
+            <select id="adresse_Arriv" name="adresse_Arriv" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Destination</option>
                    @foreach($hopitals as $hopital)
                    <option value="{{$hopital->id}}">{{$hopital->nom}}</option>
@@ -83,7 +83,7 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
-            <select class="form-control select2" name="idChauffeur" style="width: 100%;">
+            <select id="idChauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
                      @foreach($chauffeurs as $chauffeur)
                     <option value="{{$chauffeur->id}}">{{$chauffeur->nom}}</option>
@@ -124,20 +124,20 @@
       <div class="card-body">
         <!-- <form> -->
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-fullname">Urgent</label>
-            <select name="estUrgent" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Non</option>
-                    <option>Oui</option>
-                    <option>Non</option>
-                  </select>
+            <label class="form-label" for="basic-default-email">est Urgent</label>
+            <div class="input-group input-group-merge">
+            <span class="input-group-text"></span>
+              <input name="estUrgent"type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <span class="input-group-text" id="basic-default-email2"></span>
+            </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-company">Est facturé</label>
-            <select name="estFacture" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Non</option>
-                    <option>Oui</option>
-                    <option>Non</option>
-                  </select>
+            <label class="form-label" for="basic-default-email">est Facture</label>
+            <div class="input-group input-group-merge">
+            <span class="input-group-text"></span>
+              <input name="estFacture"type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <span class="input-group-text" id="basic-default-email2"></span>
+            </div>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-icon-default-email">Date depart</label>

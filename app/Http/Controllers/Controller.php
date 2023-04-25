@@ -17,10 +17,16 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function NewMission(){
-    $users= User::all();
+    // $users= User::all();
     $hopitals= Hopital::all();
     $chauffeurs=Chauffeur::all();
-    return view('AjouterMission', compact('users','hopitals','chauffeurs'));
+    return view('AjouterMission',
+        [
+        'hopitals' => $hopitals,
+        'chauffeurs' => $chauffeurs,
+        ],
+    );
+
 }
 
 
@@ -64,17 +70,34 @@ public function show()
     }
 
  public function CreateNewMission(Request $request){
-        $data['nom'] = $request->nom ;
-        $data['prenom'] = $request->prenom ;
-        $data['email'] = $request->email ;
-        $data['date_Dep'] = $request->date_Dep ;
-        $data['adresse_Dep'] = $request->adresse_Dep ;
-        $data['adresse_Arriv'] = $request->adresse_Arriv ;
-        $data['estUrgent'] = $request->estUrgent ;
-        $data['estFacture'] = $request->estFacture ;
-        $data['refEtb'] = $request->refEtb ;
-        $data['idChauffeur'] = $request->idChauffeur ;
-        $data['condTransp'] = $request->condTransp ;
+
+    $data= $request->all();
+// $mission= Missions::create(
+//     [
+//         'nom' => $request->nom ,
+//      'prenom' => $request->prenom ,
+//      'email' => $request->email ,
+//         'date_Dep' => $request->date_Dep ,
+//      'adresse_Dep' => $request->adresse_Dep ,
+//         'adresse_Arriv' => $request->adresse_Arriv ,
+//         'estUrgent' => $request->estUrgent ,
+//         'estFacture'=> $request->estFacture ,
+//         'refEtb' => $request->refEtb ,
+//         'idChauffeur' => $request->idChauffeur ,
+//         'condTransp' =>$request->condTransp,
+//     ]
+//     );
+        // $data['nom'] = $request->nom ;
+        // $data['prenom'] = $request->prenom ;
+        // $data['email'] = $request->email ;
+        // $data['date_Dep'] = $request->date_Dep ;
+        // $data['adresse_Dep'] = $request->adresse_Dep ;
+        // $data['adresse_Arriv'] = 1 ;
+        // $data['estUrgent'] = $request->estUrgent ;
+        // $data['estFacture'] = $request->estFacture ;
+        // $data['refEtb'] = $request->refEtb ;
+        // $data['idChauffeur'] = $request->idChauffeur ;
+        // $data['condTransp'] = 2 ;
 
         Missions::create($data);
         return redirect('/Accueil');
