@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hopital extends Model
+class Demande_Transp extends Model
 {
     use HasFactory;
        protected $fillable = [
-         'refEtb',
         'nom',
+        'prenom',
         'adresse',
-        'email',
         'tel',
-        'estValide',
-        'type',
+        'dateN',
+        'email',
+        'conditionTransp',
+        'adresseDep',
+        'adresseArriv',
+        'estUrgent',
+        'estTraiter',
+        'etbSante',
     ];
 }

@@ -11,19 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hopitals', function (Blueprint $table) {
+        Schema::create('personnes', function (Blueprint $table) {
             $table->id();
-            $table->string('refEtb');
             $table->string('nom');
+            $table->string('prenom');
             $table->string('adresse');
+            $table->string('contact');
             $table->string('email');
-            $table->string('tel');
-            $table->string('estValide');
-            $table->string('type');
-
-
-
-
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hopitals');
+        Schema::dropIfExists('personnes');
     }
 };

@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('missions', function (Blueprint $table) {
+        Schema::create('vehicules', function (Blueprint $table) {
             $table->id();
+             $table->string('immatriculation')->unique()->nullable();
+            $table->string('marque')->nullable();
+            $table->string('permis')->nullable();
+            $table->text('Desc')->nullable();
+            $table->boolean('estLibre')->default(true);
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('missions');
+        Schema::dropIfExists('vehicules');
     }
 };
