@@ -189,33 +189,33 @@
                 <tr>
                   <th class="px-4 py-2">Id</th>
                   <th class="px-4 py-2">Nom Malade</th>
-                  <th class="px-4 py-2">Email</th>
-                  <th class="px-4 py-2">Adresse</th>
                   <th class="px-4 py-2">Montant</th>
+                  {{--  <th class="px-4 py-2">Adresse</th>  --}}
+                  <th class="px-4 py-2">Maladie</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($missions as $mission)
-                @foreach ($montants as $montant)
+                {{--  @foreach($missions as $mission)  --}}
+                @foreach ($factures as $facture)
                   <tr>
-                    <td class="select-none px-4 py-3">{{ $mission->id}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->nom }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->email }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->adresse }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->montant }}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->id}}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->nom }}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->montant }}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->malade }}</td>
+                    {{--  <td class="select-none px-4 py-3">{{ $facture->montant }}</td>  --}}
                     <td class="px-4 py-3">
-                        <a href="{{ route('Details', $mission->id) }}" role="button"
+                        <a href="{{ route('Details', $facture->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
-                          <a href="{{ route('Edit', $mission->id) }}" role="button"
+                          <a href="{{ route('Edit', $facture->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{route('Supprimer',$mission->id)}}" role="button"
+                         <a href="{{route('Supprimer',$facture->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                     <a href="{{ route('Details', $mission->id) }}" role="button"
+                     <a href="{{ route('Details', $facture->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-download"></i></a>
                     </td>
                   </tr>
                   @endforeach
-                  @endforeach
+                  {{--  @endforeach  --}}
               </tbody>
             </table>
         </div>
