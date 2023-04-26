@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hopital;
 use Illuminate\Http\Request;
 
-class MissionController extends Controller
+class HopitalControllers extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function CreateHopital(Request $request)
     {
-        //
+        $data= $request->all();
+        Hopital::create($data);
+        return redirect('/ListesHopitals');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function GetListes()
     {
-        //
+        $hopitals = Hopital::latest()->paginate(4);
+       return view('ListesHopitals', compact('hopitals'));
     }
 
     /**
@@ -57,7 +61,7 @@ class MissionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy3(string $id)
+    public function destroy2(string $id)
     {
         //
     }

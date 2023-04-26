@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <x-app-layout>
@@ -61,36 +61,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('ListesHopital') }}" class="nav-link">
+                <a href="pages/examples/project-add.html" class="nav-link">
                   <i class="fa fa-medkit"></i>
                   <p>Ajouter Hopital</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('AjouterMission') }}" class="nav-link">
+                <a href="{{ url('Accueil') }}" class="nav-link">
                   <i class="fa fa-ambulance"></i>
-                  <p> Gérer Mission</p>
+                  <p> Gérer Missions</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="{{ url('ListesChauffeur') }}" class="nav-link">
                   <i class="fa fa-user"></i>
-                  <p> Gérer Chauffeur</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="ListesFacture" class="nav-link">
-                  <i class="fas fa-edit	"></i>
-                  <p> Gérer Factures</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="{{ url('AjouterVehicule') }}" class="nav-link">
-                  <i class="fas fa-car-side	"></i>
-                  <p> Gérer Parc</p>
+                  <p> Gérer Chauffeurs </p>
                 </a>
               </li>
 
+                <li class="nav-item">
+                <a href="{{ url('ListesFacture') }}" class="nav-link">
+                  <i class="fa fa-edit"></i>
+                  <p> Gérer Factures </p>
+                </a>
+              </li>
+
+                <li class="nav-item">
+                <a href="{{ url('ListesVehicule') }}" class="nav-link">
+                  <i class="fa fa-car-side"></i>
+                  <p> Gérer Parc </p>
+                </a>
+              </li>
           </li>
 
       </nav>
@@ -179,37 +180,36 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-2">
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
              <p class="bg-white-700 font-semibold text-lg text-gray-800 leading-tight">
-            Listes des Missions
-            <a href="{{ route('NewMission') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
-            font-bold py-1 px-2 rounded float-right">Ajouter nouvelles Missions</a>
+            Listes des Chauffeurs
+            <a href="{{ url('AjouterHopital') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
+            font-bold py-1 px-2 rounded float-right">Ajouter Hopital</a>
         </p>
             <table class="table-fixed">
               <thead>
                 <tr>
                   <th class="px-4 py-2">Id</th>
                   <th class="px-4 py-2">Nom</th>
-                  <th class="px-4 py-2">Prenom</th>
-                  <th class="px-4 py-2">estUrgent</th>
-                  <th class="px-4 py-2">date_Dep</th>
-                  <th class="px-4 py-2">adresse_Dep</th>
-                  <th class="px-4 py-2">Action</th>
+                  <th class="px-4 py-2">adresse</th>
+                  <th class="px-4 py-2">email</th>
+                  <th class="px-4 py-2">tel</th>
+                  <th class="px-4 py-2">type</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($missions as $mission)
+                @foreach($hopitals as $hopital)
                   <tr>
-                    <td class="select-none px-4 py-3">{{ $mission->id}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->nom }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->prenom}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->estUrgent }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->date_Dep }}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->adresse_Dep }}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->id}}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->nom }}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->adresse}}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->email }}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->tel }}</td>
+                    <td class="select-none px-4 py-3">{{ $hopital->type }}</td>
                     <td class="px-4 py-3">
-                        <a href="{{ route('Details', $mission->id) }}" role="button"
+                        <a href="{{ route('Details', $hopital->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
-                          <a href="{{ route('Edit', $mission->id) }}" role="button"
+                          <a href="{{ route('Edit', $hopital->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{route('Supprimer',$mission->id)}}" role="button"
+                         <a href="{{route('Supprimer',$hopital->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>

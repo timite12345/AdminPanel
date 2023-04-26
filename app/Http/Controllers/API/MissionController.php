@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Models\Missions;
+use App\Models\Mission;
 
 class MissionController extends \Illuminate\Routing\Controller
 {
@@ -12,7 +12,7 @@ class MissionController extends \Illuminate\Routing\Controller
      */
     public function index()
     {
-          $missions = Missions::all();
+          $missions = Mission::all();
         return response()->json($missions);
     }
 

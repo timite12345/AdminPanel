@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facture;
+use App\Models\Mission;
 use Illuminate\Http\Request;
 
-class MissionController extends Controller
+class FacturesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $factures = Facture::latest()->paginate(4);
+        $missions = Mission::latest()->paginate(4);
+     return view('ListesFacture', compact('factures','missions'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -57,7 +62,7 @@ class MissionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy3(string $id)
+    public function destroy1(string $id)
     {
         //
     }

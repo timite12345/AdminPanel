@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mission;
 use Illuminate\Http\Request;
-use App\Models\Missions;
 
-class Mission extends Controller
+class Missions extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-         $missions = Missions::all();
+         $missions = Mission::latest()->paginate(4);
 
         return view('dashboard',compact('missions'));
     }
@@ -48,14 +48,14 @@ class Mission extends Controller
      */
     public function edit(string $id)
     {
-          $missions = Missions::all();
+          $missions = Mission::all();
         return view('Mission.Edit', compact('missions'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Missions $missions)
+    public function update(Request $request, Mission $missions)
     {
         $request->validate([
             'nom_client' => 'required',

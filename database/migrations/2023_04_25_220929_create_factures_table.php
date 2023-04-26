@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
             $table->string('nom')->nullable();
+            $table->string('montant');
+            $table->string('malade');
             $table->timestamps();
         });
     }

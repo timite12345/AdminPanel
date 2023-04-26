@@ -61,7 +61,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="{{ url('AjouterHopital') }}" class="nav-link">
                   <i class="fa fa-medkit"></i>
                   <p>Ajouter Hopital</p>
                 </a>
@@ -80,23 +80,16 @@
               </li>
 
                 <li class="nav-item">
-                <a href="{{ url('ListesChauffeur') }}" class="nav-link">
+                <a href="{{ url('ListesFacture') }}" class="nav-link">
                   <i class="fa fa-edit"></i>
                   <p> Gérer Factures </p>
                 </a>
               </li>
 
                 <li class="nav-item">
-                <a href="{{ url('ListesChauffeur') }}" class="nav-link">
+                <a href="{{ url('ListesVehicule') }}" class="nav-link">
                   <i class="fa fa-car-side"></i>
                   <p> Gérer Parc </p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
-                  <i class="fa fa-phone"></i>
-                  <p>Contacts</p>
                 </a>
               </li>
           </li>
