@@ -37,7 +37,7 @@ public function show()
      return view('dashboard', compact('missions'));
     }
 
- public function destroy($mission)
+ public function destroye($mission)
     {
         Mission::findOrFail($mission)->delete();
         return back()->with('message',"L'achat supprimé avec succès");

@@ -12,7 +12,7 @@ class Missions extends Controller
      */
     public function index()
     {
-         $missions = Mission::latest()->paginate(4);
+         $missions = Mission::all();
 
         return view('dashboard',compact('missions'));
     }

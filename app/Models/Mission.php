@@ -17,7 +17,7 @@ class Mission extends Model
         'date_Dep',
         'adresse_Dep',
         'adresse_Arriv',
-        'condTranspo',
-        'idChauffeur'
+        'condTransp',
+        'idChauffeur',
     ];
 }

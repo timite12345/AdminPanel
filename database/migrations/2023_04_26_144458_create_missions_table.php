@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-              $table->string('nom');
+            $table->string('nom');
             $table->string('prenom');
             $table->string('email');
             $table->string('estUrgent');
             $table->string('estFacture');
             $table->string('date_Dep');
             $table->string('adresse_Dep');
-            $table->string('adresse_Arriv')->nullable();
+            $table->string('adresse_Arriv');
             $table->string('condTransp');
             $table->string('idChauffeur');
             $table->timestamps();
-        });
+    });
     }
 
     /**
