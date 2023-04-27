@@ -41,9 +41,7 @@
 					</div>
 				</div>
 				<div class="form-row-total">
-					{{--  <div class="form-row">
-						<input type="password" name="password" id="password" class="input-text" placeholder="Your Password" required>
-					</div>  --}}
+					
 					<div class="form-row">
 						<input type="text" name="estDisponible" id="comfirm-password" class="input-text" placeholder="estDisponible" required>
 					</div>

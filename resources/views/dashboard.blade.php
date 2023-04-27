@@ -187,11 +187,11 @@
               <thead>
                 <tr>
                   <th class="px-4 py-2">Id</th>
-                  <th class="px-4 py-2">Nom</th>
                   <th class="px-4 py-2">Prenom</th>
-                  <th class="px-4 py-2">estUrgent</th>
-                  <th class="px-4 py-2">date_Dep</th>
-                  <th class="px-4 py-2">adresse_Dep</th>
+                  <th class="px-4 py-2">Date_Dep</th>
+                  <th class="px-4 py-2">Adresse_Dep</th>
+                  <th class="px-4 py-2">Adresse_Arri</th>
+                  <th class="px-4 py-2">Chauffeur</th>
                   <th class="px-4 py-2">Action</th>
                 </tr>
               </thead>
@@ -199,11 +199,12 @@
                 @foreach($missions as $mission)
                   <tr>
                     <td class="select-none px-4 py-3">{{ $mission->id}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->nom }}</td>
                     <td class="select-none px-4 py-3">{{ $mission->prenom}}</td>
-                    <td class="select-none px-4 py-3">{{ $mission->estUrgent }}</td>
                     <td class="select-none px-4 py-3">{{ $mission->date_Dep }}</td>
                     <td class="select-none px-4 py-3">{{ $mission->adresse_Dep }}</td>
+                    <td class="select-none px-4 py-3">{{ $mission->adresse_Arriv }}</td>
+                    <td class="select-none px-4 py-3">{{ $mission->idChauffeur }}</td>
+
                     <td class="px-4 py-3">
                         <a href="{{ route('Details', $mission->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>

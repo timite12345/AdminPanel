@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facture;
+use App\Models\Hopital;
 use App\Models\Mission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 class FacturesController extends Controller
 {
@@ -15,7 +19,8 @@ class FacturesController extends Controller
     {
         $factures = Facture::latest()->paginate(4);
         $missions = Mission::latest()->paginate(4);
-     return view('ListesFacture', compact('factures','missions'));
+        $hopitals = Hopital::all();
+     return view('ListesFacture', compact('factures','missions','hopitals'));
     }
 
 
@@ -30,10 +35,13 @@ class FacturesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function getFacturePdf (Facture $factures)
+{   $fac=Facture::all()->count();
+    $da = \Carbon\Carbon::now()->format('d-m-Y'); //permet de modifier le format de la date
+    $date = \Carbon\Carbon::now()->format('d-m-Y');
+    $pdf = PDF::loadView('PdfFacture', compact('factures'));
+    return $pdf->stream(); //la méthode stream() pour afficher le fichier PDF dans un navigateur :
+}
 
     /**
      * Display the specified resource.
@@ -62,8 +70,9 @@ class FacturesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy1(string $id)
+    public function destroye1($factures)
     {
-        //
+          Facture::findOrFail($factures)->delete();
+        return back()->with('message'," Facture supprimé avec succès");
     }
 }

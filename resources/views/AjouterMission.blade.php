@@ -77,7 +77,7 @@
             <select id="adresse_Arriv" name="adresse_Arriv" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Destination</option>
                    @foreach($hopitals as $hopital)
-                   <option value="{{$hopital->id}}">{{$hopital->nom}}</option>
+                   <option value="{{$hopital->nom}}">{{$hopital->nom}}</option>
                    @endforeach
                   </select>
           </div>
@@ -86,7 +86,7 @@
             <select id="idChauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
                      @foreach($chauffeurs as $chauffeur)
-                    <option value="{{$chauffeur->id}}">{{$chauffeur->nom}}</option>
+                    <option value="{{$chauffeur->nom}}">{{$chauffeur->nom}}</option>
                     @endforeach
 
             </select>

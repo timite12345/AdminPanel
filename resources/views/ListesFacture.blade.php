@@ -190,8 +190,10 @@
                   <th class="px-4 py-2">Id</th>
                   <th class="px-4 py-2">Nom Malade</th>
                   <th class="px-4 py-2">Montant</th>
-                  {{--  <th class="px-4 py-2">Adresse</th>  --}}
                   <th class="px-4 py-2">Maladie</th>
+                  <th class="px-4 py-2">Created_at</th>
+
+
                 </tr>
               </thead>
               <tbody>
@@ -202,15 +204,17 @@
                     <td class="select-none px-4 py-3">{{ $facture->nom }}</td>
                     <td class="select-none px-4 py-3">{{ $facture->montant }}</td>
                     <td class="select-none px-4 py-3">{{ $facture->malade }}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->created_at }}</td>
+
                     {{--  <td class="select-none px-4 py-3">{{ $facture->montant }}</td>  --}}
                     <td class="px-4 py-3">
                         <a href="{{ route('Details', $facture->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
                           <a href="{{ route('Edit', $facture->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{route('Supprimer',$facture->id)}}" role="button"
+                         <a href="{{route('destroyefacture',$facture->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                     <a href="{{ route('Details', $facture->id) }}" role="button"
+                     <a href="{{ route('getFacturePdf', $facture->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-download"></i></a>
                     </td>
                   </tr>

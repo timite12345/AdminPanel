@@ -22,10 +22,13 @@
       <div id="details" class="clearfix">
         <div id="client">
           <div class="to">FACTURE à:</div>
-          <h2 class="name">{{$etbs->nom}}</h2>
-          <div class="address">{{$etbs->adresse}}</div>
-          <div class="email"><a href="mailto:{{$etbs->email}}">{{$etbs->email}}</a></div>
+          @foreach ($hopitals as $hopital )
+          <h2 class="name">{{$hopital->nom}}</h2>
+          <div class="address">{{$hopital->adresse}}</div>
+         <div class="type">{{$hopital->type}}</div>
+          <div class="email"><a href="mailto:{{$hopital->email}}">{{$hopitals->email}}</a></div>
         </div>
+       @endforeach
         <div id="invoice">
           <h3>Facture N°{{$fac}} {{$da}}</h3>
           <div class="date">Date de facturation: {{$date}}</div>
@@ -52,10 +55,10 @@
                 <span>{{$mission->tel}} </span><br>
                 <span>{{$mission->email}} </span>
             </td>
-            <td class="unit">{{$mission->adresseDep}}</td>
-            <td class="qty">{{$mission->adresseArriv}}</td>
-            <td class="unit">{{$mission->conditionTransp}}</td>
-            <td class="total">{{$mission->prix}}€</td>
+            <td class="unit">{{$mission->adresse_Dep}}</td>
+            <td class="qty">{{$mission->adresse_Arriv}}</td>
+            <td class="unit">{{$mission->condTransp}}</td>
+            <td class="total">{{$mission->montant}}€</td>
           </tr>
           {{$i=$i+1}}
           {{$prixht = $prixht + $mission->prix}}

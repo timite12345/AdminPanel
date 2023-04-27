@@ -180,7 +180,7 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-2">
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
              <p class="bg-white-700 font-semibold text-lg text-gray-800 leading-tight">
-            Listes des Chauffeurs
+            Listes des Hopitaux
             <a href="{{ url('AjouterHopital') }}" role="button" class="bg-blue-400 hover:bg-blue-700 text-white
             font-bold py-1 px-2 rounded float-right">Ajouter Hopital</a>
         </p>
@@ -190,7 +190,6 @@
                   <th class="px-4 py-2">Id</th>
                   <th class="px-4 py-2">Nom</th>
                   <th class="px-4 py-2">adresse</th>
-                  <th class="px-4 py-2">email</th>
                   <th class="px-4 py-2">tel</th>
                   <th class="px-4 py-2">type</th>
                 </tr>
@@ -201,7 +200,6 @@
                     <td class="select-none px-4 py-3">{{ $hopital->id}}</td>
                     <td class="select-none px-4 py-3">{{ $hopital->nom }}</td>
                     <td class="select-none px-4 py-3">{{ $hopital->adresse}}</td>
-                    <td class="select-none px-4 py-3">{{ $hopital->email }}</td>
                     <td class="select-none px-4 py-3">{{ $hopital->tel }}</td>
                     <td class="select-none px-4 py-3">{{ $hopital->type }}</td>
                     <td class="px-4 py-3">
@@ -209,7 +207,7 @@
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-eye"></i></a>
                           <a href="{{ route('Edit', $hopital->id) }}" role="button"
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
-                         <a href="{{route('Supprimer',$hopital->id)}}" role="button"
+                         <a href="{{route('destroyehopital',$hopital->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>

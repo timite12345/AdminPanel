@@ -10,16 +10,18 @@ class HopitalControllers extends Controller
     /**
      * Display a listing of the resource.
      */
+    // Recupérer tout les champs dans le formulaire pour les insérer dans la base de données
     public function CreateHopital(Request $request)
     {
         $data= $request->all();
         Hopital::create($data);
-        return redirect('/ListesHopitals');
+        return redirect('/ListesHopitals'); //retourner la view /ListesHopitals
     }
 
     /**
      * Show the form for creating a new resource.
      */
+    // Récupérer toutes les donnés dans la BD hopitals pour afficher
     public function GetListes()
     {
         $hopitals = Hopital::latest()->paginate(4);
@@ -61,8 +63,9 @@ class HopitalControllers extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy2(string $id)
+    public function destroye2($hopitals)
     {
-        //
+         Hopital::findOrFail($hopitals)->delete();
+        return back()->with('message'," Hopital supprimé avec succès");
     }
 }

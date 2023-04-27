@@ -69,7 +69,11 @@ Route::middleware('auth')->group(function () {
 Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
 Route::get('/AjouterMission',[Controller::class, "NewMission"])->name('NewMission');
 Route::get('/Accueil',[Controller::class, "show"])->name('Accueil');
-Route::get('/Supprimer/{id}', [Controller::class, 'destroy'])->name('Supprimer');
+Route::get('/Supprimer/{id}', [Controller::class, 'destroye'])->name('Supprimer');
+Route::get('/destroye2/{id}', [HopitalControllers::class, 'destroye2'])->name('destroyehopital');
+Route::get('/destroye1/{id}', [FacturesController::class, 'destroye1'])->name('destroyefacture');
+Route::get('/Supprimer/{id}', [Controller::class, 'destroye'])->name('Supprimer');
+
 Route::get('/Modifier/{id}', [Controller::class, 'modifier'])->name('Edit');
 Route::get('/Voir/{id}', [Controller::class, 'voir'])->name('Details');
 Route::post('/AddNewChauffeur',[AddChauffeur::class, "CreateChauf"])->name('addChauffeur');
@@ -77,6 +81,9 @@ Route::get('/ListesChauffeur',[AddChauffeur::class, "showChauff"])->name('Select
 Route::get('/ListesFactures',[FacturesController::class, "index"])->name('SelectFactures');
 Route::post('/ListesHopitals',[HopitalControllers::class, "CreateHopital"])->name('NewHopital');
 Route::get('/ListesHopitals',[HopitalControllers::class, "GetListes"])->name('ListeHopitals');
+
+
+Route::get('/pdfFacture/{id}', [FacturesController::class, 'getFacturePdf']);
 
 
 

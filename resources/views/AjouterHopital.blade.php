@@ -34,7 +34,7 @@
 				</div>
                 <div class="form-row-total">
 					<div class="form-row">
-						<input type="text" name="type" id="full-name" class="input-text" placeholder="Type" required>
+						<input type="text" name="type" id="full-name" class="input-text" placeholder="Type" required">
 					</div>
 
 				</div>
