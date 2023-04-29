@@ -55,6 +55,10 @@ Route::get('/AjouterPatient', function () {
     return view('AjouterPatient');
 });
 // //
+Route::get('/EditerFactures', function () {
+    return view('EditerFactures');
+});
+// //
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -67,6 +71,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/NewMission',[Controller::class, "CreateNewMission"])->name('mission');
+Route::post('/ListesHopitals',[HopitalControllers::class, "CreateHopital"])->name('NewHopital');
+Route::post('/AddNewChauffeur',[AddChauffeur::class, "CreateChauf"])->name('addChauffeur');
+
+
+
+
+
 Route::get('/AjouterMission',[Controller::class, "NewMission"])->name('NewMission');
 Route::get('/Accueil',[Controller::class, "show"])->name('Accueil');
 Route::get('/Supprimer/{id}', [Controller::class, 'destroye'])->name('Supprimer');
@@ -76,15 +87,14 @@ Route::get('/Supprimer/{id}', [Controller::class, 'destroye'])->name('Supprimer'
 
 Route::get('/Modifier/{id}', [Controller::class, 'modifier'])->name('Edit');
 Route::get('/Voir/{id}', [Controller::class, 'voir'])->name('Details');
-Route::post('/AddNewChauffeur',[AddChauffeur::class, "CreateChauf"])->name('addChauffeur');
 Route::get('/ListesChauffeur',[AddChauffeur::class, "showChauff"])->name('SelectChauffeur');
 Route::get('/ListesFactures',[FacturesController::class, "index"])->name('SelectFactures');
-Route::post('/ListesHopitals',[HopitalControllers::class, "CreateHopital"])->name('NewHopital');
 Route::get('/ListesHopitals',[HopitalControllers::class, "GetListes"])->name('ListeHopitals');
-
 Route::get('/getFacturePdf/{id}', [FacturesController::class, 'getFacturePdf'])->name('SelectFacturePdf');
 
-Route::get('/pdfFacture/{id}', [FacturesController::class, 'getFacturePdf']);
+Route::post('/EditerFactures',[FacturesController::class, "NewFacture"])->name('NewFacture');
+//Route::get('/ListesFactures',[FacturesController::class, "NewFacture"])->name('NewFacture');
+
 
 
 

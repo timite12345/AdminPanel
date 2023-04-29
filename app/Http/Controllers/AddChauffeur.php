@@ -12,15 +12,9 @@ use Illuminate\View\View;
 class AddChauffeur extends Controller
 {
  public function CreateChauf(Request $request){
-        $data['nom'] = $request->nom ;
-        $data['prenom'] = $request->prenom ;
-        $data['tel'] = $request->tel ;
-        $data['email'] = $request->email ;
-        $data['adresse'] = $request->adresse;
-        $data['permis'] = $request->permis;
-        $data['estDisponible'] = $request->estDisponible;
-         Chauffeur::create($data);
-        session()->flash('Succes','Un nouvel hopital ajouté');
+    $data= $request->all();
+    Chauffeur::create($data);
+    session()->flash('Succes','Un nouvel hopital ajouté');
 
         return redirect('/ListesChauffeur');
   }

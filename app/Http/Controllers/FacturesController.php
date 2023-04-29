@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chauffeur;
 use App\Models\Facture;
 use App\Models\Hopital;
 use App\Models\Mission;
@@ -20,36 +21,39 @@ class FacturesController extends Controller
         $factures = Facture::latest()->paginate(4);
         $missions = Mission::latest()->paginate(4);
         $hopitals = Hopital::all();
-     return view('ListesFacture', compact('factures','missions','hopitals'));
+        $chauffeurs = Chauffeur::all();
+     return view('ListesFacture', compact('factures','missions','hopitals','chauffeurs'));
     }
 
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+       public function NewFacture(){
+    $hopitals= Hopital::all();
+    $chauffeurs=Chauffeur::all();
+    $missions = Mission::all();
+    return view('AjouterMission',
+        [
+        'hopitals' => $hopitals,
+        'chauffeurs' => $chauffeurs,
+        'missions' =>$missions,
+        ],
+    );
+
+}
 
     /**
      * Store a newly created resource in storage.
      */
-  public function getFacturePdf (Facture $factures)
-{
-   $hopitals = Hopital::all();
-    $fac=Facture::all()->count();
-    $da = \Carbon\Carbon::now()->format('d-m-Y'); //permet de modifier le format de la date
-    $date = \Carbon\Carbon::now()->format('d-m-Y');
-    $pdf = PDF::loadView('PdfFacture', compact('factures'));
-    $pdf->stream(); //la méthode stream() pour afficher le fichier PDF dans un navigateur :
-    return view('PdfFacture',compact(
-        '$hopitals',
-        '$da',
-        '$date',
-        'pdf'
+  public function getFacturePdf(){
+    $hopitals= Hopital::all();
+    $chauffeurs=Chauffeur::all();
+    $missions = Mission::all();
+    $pdf = PDF::loadView('PdfFacture', compact('hopitals','chauffeurs','missions'));
+    return $pdf->stream();
 
-));
+
 }
 
     /**

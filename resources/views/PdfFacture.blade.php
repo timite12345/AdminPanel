@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -26,12 +26,12 @@
           <h2 class="name">{{$hopital->nom}}</h2>
           <div class="address">{{$hopital->adresse}}</div>
          <div class="type">{{$hopital->type}}</div>
-          <div class="email"><a href="mailto:{{$hopital->email}}">{{$hopitals->email}}</a></div>
+          <div class="email"><a href="mailto:{{$hopital->email}}">{{$hopital->email}}</a></div>
         </div>
        @endforeach
         <div id="invoice">
-          <h3>Facture N°{{$fac}} {{$da}}</h3>
-          <div class="date">Date de facturation: {{$date}}</div>
+          {{--  <h3>Facture N°{{$fac}} {{$da}}</h3>
+          <div class="date">Date de facturation: {{$date}}</div>  --}}
         </div>
       </div>
       <table border="0" cellspacing="0" cellpadding="0" >
@@ -46,9 +46,9 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($missions as $mission)
+          {{--  @foreach($missions as $mission)  --}}
           <tr>
-            <td class="no">{{$i}}</td>
+            {{--  <td class="no">{{$i}}</td>
             <td class="desc">
                 <span>{{$mission->nom}} {{$mission->prenom}}</span><br>
                 <span>{{$mission->adresse}} </span><br>
@@ -62,10 +62,10 @@
           </tr>
           {{$i=$i+1}}
           {{$prixht = $prixht + $mission->prix}}
-          @endforeach
+          @endforeach  --}}
 
         </tbody>
-        <tfoot>
+        {{--  <tfoot>
           <tr>
             <td colspan="2"></td>
             <td colspan="2">TOTAL HT</td>
@@ -90,6 +90,6 @@
     </main>
     <footer>
     La facture a été créée sur un ordinateur et est valide sans la signature et le sceau.
-    </footer>
+    </footer>  --}}
   </body>
 </html>
