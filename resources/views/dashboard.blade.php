@@ -79,7 +79,7 @@
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="ListesFacture" class="nav-link">
+                <a href="ListesFactures" class="nav-link">
                   <i class="fas fa-edit	"></i>
                   <p> Gérer Factures</p>
                 </a>

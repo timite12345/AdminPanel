@@ -82,7 +82,7 @@ Route::get('/ListesFactures',[FacturesController::class, "index"])->name('Select
 Route::post('/ListesHopitals',[HopitalControllers::class, "CreateHopital"])->name('NewHopital');
 Route::get('/ListesHopitals',[HopitalControllers::class, "GetListes"])->name('ListeHopitals');
 
-Route::get('/getFacturePdf/{id}', [FacturesController::class, 'getFacturePdf']);
+Route::get('/getFacturePdf/{id}', [FacturesController::class, 'getFacturePdf'])->name('SelectFacturePdf');
 
 Route::get('/pdfFacture/{id}', [FacturesController::class, 'getFacturePdf']);
 

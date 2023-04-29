@@ -214,7 +214,7 @@
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
                          <a href="{{route('destroyefacture',$facture->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                     <a href="{{ route('getFacturePdf', $facture->id) }}" role="button"
+                     <a href="{{ route('SelectFacturePdf', $facture->id) }}" role="button"
                         class="btn btn-sm bg-teal mr-2"><i class="fas fa-download"></i></a>
                     </td>
                   </tr>
