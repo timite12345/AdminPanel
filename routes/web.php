@@ -55,10 +55,10 @@ Route::get('/AjouterPatient', function () {
     return view('AjouterPatient');
 });
 // //
-Route::get('/EditerFactures', function () {
-    return view('EditerFactures');
-});
-// //
+// Route::get('/EditerFactures', function () {
+//     return view('EditerFactures');
+// });
+// // //
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -92,10 +92,10 @@ Route::get('/ListesFactures',[FacturesController::class, "index"])->name('Select
 Route::get('/ListesHopitals',[HopitalControllers::class, "GetListes"])->name('ListeHopitals');
 Route::get('/getFacturePdf/{id}', [FacturesController::class, 'getFacturePdf'])->name('SelectFacturePdf');
 
-Route::post('/EditerFactures',[FacturesController::class, "NewFacture"])->name('NewFacture');
-//Route::get('/ListesFactures',[FacturesController::class, "NewFacture"])->name('NewFacture');
+// Route::get('/ListesFactures',[FacturesController::class, "CreatedFacture"])->name('NewFacture');
+Route::post('/EditerFactures',[FacturesController::class, "CreateFacture"])->name('NewFacture');
 
-
+// Route::get('/EditerFactures',[FacturesController::class, "CreateFacture"])->name('NewFacture');
 
 
 

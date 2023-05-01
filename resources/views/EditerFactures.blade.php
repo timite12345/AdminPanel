@@ -62,7 +62,7 @@
       <!-- Content wrapper -->
 <div class="content-wrapper">
 <div class="container-xxl flex-grow-1 container-p-y">
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> Nouvelle Mission</h4>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulaire/</span> Editer Facture</h4>
 <form method="post" action="{{route('NewFacture')}}">
     @csrf
 <div class="row">
@@ -74,20 +74,20 @@
       <div class="card-body">
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
-            <select id="adresse_Arriv" name="adresse_Arriv" class="form-control select2" style="width: 100%;">
+            <select id="hopital" name="adresse_Arriv" class="form-control select2" style="width: 100%;">
                     <option selected="selected">Destination</option>
-                   @foreach($hopitals as $hopital)
+                   {{--  @foreach($hopitals as $hopital)
                    <option value="{{$hopital->nom}}">{{$hopital->nom}}</option>
-                   @endforeach
+                   @endforeach  --}}
                   </select>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
-            <select id="idChauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
+            <select id="nom_chauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
-                     @foreach($chauffeurs as $chauffeur)
+                     {{--  @foreach($chauffeurs as $chauffeur)
                     <option value="{{$chauffeur->nom}}">{{$chauffeur->nom}}</option>
-                    @endforeach
+                    @endforeach  --}}
 
             </select>
           </div>
@@ -99,17 +99,17 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class=label for="exampleInputName">Prenom</label>
+            <label class=label for="exampleInputName">Email Patient</label>
             <div class="input-group input-group-merge">
             <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
-              <input name="prenom" type="text" id="basic-default-email" class="form-control" placeholder="saisir prenom" />
+              <input name="email_patient" type="text" id="basic-default-email" class="form-control" placeholder="saisir Email Patient" />
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-default-email">Email</label>
+            <label class="form-label" for="basic-default-email">Email Hopital</label>
             <div class="input-group input-group-merge">
             <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-              <input name="email"type="email" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <input name="email_hopital"type="email" id="basic-default-email" class="form-control" placeholder="saisir Email Hopital" />
               <span class="input-group-text" id="basic-default-email2">@example.com</span>
             </div>
           </div>
@@ -124,45 +124,33 @@
       <div class="card-body">
         <!-- <form> -->
           <div class="mb-3">
-            <label class="form-label" for="basic-default-email">est Urgent</label>
+            <label class="form-label" for="basic-default-email">Montant</label>
             <div class="input-group input-group-merge">
             <span class="input-group-text"></span>
-              <input name="estUrgent"type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <input name="Montant"type="text" id="basic-default-email" class="form-control" placeholder="saisir Montant" />
               <span class="input-group-text" id="basic-default-email2"></span>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-default-email">est Facture</label>
+            <label class="form-label" for="basic-default-email">Maladie</label>
             <div class="input-group input-group-merge">
             <span class="input-group-text"></span>
-              <input name="estFacture"type="text" id="basic-default-email" class="form-control" placeholder="saisir email" />
+              <input name="estFacture"type="text" id="basic-default-email" class="form-control" placeholder="saisir la nature de la mission" />
               <span class="input-group-text" id="basic-default-email2"></span>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-email">Date depart</label>
-            <div class="input-group input-group-merge">
-              <input name="date_Dep"type="date" id="basic-icon-default-email" class="form-control" placeholder="date de depart" />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-email">Adresse depart</label>
-            <div class="input-group input-group-merge">
-              <input name="adresse_Dep"type="text" id="basic-icon-default-email" class="form-control" placeholder="adresse de depart" />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="basic-icon-default-message">Conditions de transport</label>
+            <label class="form-label" for="basic-icon-default-message">Commentaires</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
-              <input name="condTransp" type="text" class="form-control" placeholder="conditions de transport"/>
+              <input name="condTransp" type="text" class="form-control" placeholder="Commentaires"/>
             </div>
           </div>
         </div>
       </div>
   </div>
       <div class=" footer text-center">
-          <button type="submit" class="btn btn-fill btn-danger btn-wd">Enregistrer Nouvelle Mission</button>
+          <button type="submit" class="btn btn-fill btn-danger btn-wd">Enregistrer</button>
       </div>
     </div>
 </div>

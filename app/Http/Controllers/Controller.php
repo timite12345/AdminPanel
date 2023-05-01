@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chauffeur;
+use App\Models\Facture;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -20,11 +21,13 @@ class Controller extends BaseController
     $hopitals= Hopital::all();
     $chauffeurs=Chauffeur::all();
     $missions = Mission::all();
+    $factures = Facture::all();
     return view('AjouterMission',
         [
         'hopitals' => $hopitals,
         'chauffeurs' => $chauffeurs,
         'missions' =>$missions,
+        'factures' =>$factures,
         ],
     );
 

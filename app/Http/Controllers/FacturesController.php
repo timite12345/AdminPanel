@@ -22,26 +22,22 @@ class FacturesController extends Controller
         $missions = Mission::latest()->paginate(4);
         $hopitals = Hopital::all();
         $chauffeurs = Chauffeur::all();
+
      return view('ListesFacture', compact('factures','missions','hopitals','chauffeurs'));
     }
 
 
     /**
      * Show the form for creating a new resource.
-     */
-       public function NewFacture(){
-    $hopitals= Hopital::all();
-    $chauffeurs=Chauffeur::all();
-    $missions = Mission::all();
-    return view('AjouterMission',
-        [
-        'hopitals' => $hopitals,
-        'chauffeurs' => $chauffeurs,
-        'missions' =>$missions,
-        ],
-    );
+//      */
+public function CreateFacture(Request $request){
+    $data= $request->all();
+    $hopitals = Hopital::all();
+    Facture::create($data);
+    session()->flash('Succes','Un nouvel hopital ajouté');
 
-}
+        return view('EditerFactures',compact('hopitals'));
+  }
 
     /**
      * Store a newly created resource in storage.
@@ -52,8 +48,6 @@ class FacturesController extends Controller
     $missions = Mission::all();
     $pdf = PDF::loadView('PdfFacture', compact('hopitals','chauffeurs','missions'));
     return $pdf->stream();
-
-
 }
 
     /**

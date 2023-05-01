@@ -9,7 +9,12 @@ class Facture extends Model
 {
     use HasFactory;
       protected $fillable = [
-        'etbsante',
         'nom',
+        'hopital',
+        'email_patient',
+        'email_hopital',
+        'montant',
+        'malade',
+        'commentaires'
     ];
 }

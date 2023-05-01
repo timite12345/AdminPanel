@@ -14,8 +14,13 @@ return new class extends Migration
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
             $table->string('nom')->nullable();
+            $table->string('hopital');
+            $table->string('nom_chauffeur');
+            $table->string('email_patient');
             $table->string('montant');
-            $table->string('malade');
+            $table->string('email_hopital');
+            $table->string('maladie');
+            $table->string('commentaires');
             $table->timestamps();
         });
     }

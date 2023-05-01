@@ -36,18 +36,6 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header"></li>
-
-
-
-          <li class="nav-item">
-
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="fa fa-inbox"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-
           <li class="nav-item">
             <a href="#" class="nav-link">
               <p>
@@ -114,13 +102,13 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fa fa-ambulance"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-text">Ambulances</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  100
+                  {{--  <small>%</small>  --}}
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -130,11 +118,11 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-hospital"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Hopitaux</span>
+                <span class="info-box-number">50</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -147,11 +135,11 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-text">Chauffeurs</span>
+                <span class="info-box-number">200</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -160,11 +148,11 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-ambulance"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Mission effectuées</span>
+                <span class="info-box-number">70</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -212,6 +200,7 @@
                         class="btn btn-sm bg-primary mr-2"><i class="fas fa-edit"></i></a>
                          <a href="{{route('Supprimer',$mission->id)}}" role="button"
                     class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+
                     </td>
                   </tr>
                   @endforeach
