@@ -74,20 +74,20 @@
       <div class="card-body">
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Choisir Hopital</label>
-            <select id="hopital" name="adresse_Arriv" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Destination</option>
-                   {{--  @foreach($hopitals as $hopital)
+            <select id="hopital" name="hopital" class="form-control select2" style="width: 100%;">
+                  <option selected="selected">Destination</option>
+                     @foreach($hopitals as $hopital)
                    <option value="{{$hopital->nom}}">{{$hopital->nom}}</option>
-                   @endforeach  --}}
+                   @endforeach
                   </select>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-company">Choisir Chauffeur</label>
-            <select id="nom_chauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
+            <select id="idChauffeur" class="form-control select2" name="idChauffeur" style="width: 100%;">
             <option selected="selected">Selectionner un Chauffeur</option>
-                     {{--  @foreach($chauffeurs as $chauffeur)
+                     @foreach($chauffeurs as $chauffeur)
                     <option value="{{$chauffeur->nom}}">{{$chauffeur->nom}}</option>
-                    @endforeach  --}}
+                    @endforeach
 
             </select>
           </div>
@@ -135,7 +135,7 @@
             <label class="form-label" for="basic-default-email">Maladie</label>
             <div class="input-group input-group-merge">
             <span class="input-group-text"></span>
-              <input name="estFacture"type="text" id="basic-default-email" class="form-control" placeholder="saisir la nature de la mission" />
+              <input name="Maladie"type="text" id="basic-default-email" class="form-control" placeholder="saisir la nature de la mission" />
               <span class="input-group-text" id="basic-default-email2"></span>
             </div>
           </div>
@@ -143,7 +143,7 @@
             <label class="form-label" for="basic-icon-default-message">Commentaires</label>
             <div class="input-group input-group-merge">
               <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
-              <input name="condTransp" type="text" class="form-control" placeholder="Commentaires"/>
+              <input name="commentaires" type="text" class="form-control" placeholder="Commentaires"/>
             </div>
           </div>
         </div>

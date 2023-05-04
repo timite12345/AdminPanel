@@ -26,17 +26,24 @@ class FacturesController extends Controller
      return view('ListesFacture', compact('factures','missions','hopitals','chauffeurs'));
     }
 
-
+public function EditerFactures(Request $request){
+        $hopitals = Hopital::all();
+        $chauffeurs = Chauffeur::all();
+    return view('EditerFactures',compact('hopitals','chauffeurs'));
+}
     /**
      * Show the form for creating a new resource.
 //      */
 public function CreateFacture(Request $request){
     $data= $request->all();
+ //  dd($data);
     $hopitals = Hopital::all();
+    $chauffeurs = Chauffeur::all();
+    $factures =Facture::all();
     Facture::create($data);
     session()->flash('Succes','Un nouvel hopital ajouté');
 
-        return view('EditerFactures',compact('hopitals'));
+        return redirect('/ListesFactures');
   }
 
     /**

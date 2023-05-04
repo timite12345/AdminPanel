@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom')->nullable();
             $table->string('hopital');
-            $table->string('nom_chauffeur');
+            $table->string('idChauffeur');
             $table->string('email_patient');
-            $table->string('montant');
+            $table->string('Montant');
             $table->string('email_hopital');
             $table->string('maladie');
             $table->string('commentaires');

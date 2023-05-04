@@ -92,10 +92,8 @@ Route::get('/ListesFactures',[FacturesController::class, "index"])->name('Select
 Route::get('/ListesHopitals',[HopitalControllers::class, "GetListes"])->name('ListeHopitals');
 Route::get('/getFacturePdf/{id}', [FacturesController::class, 'getFacturePdf'])->name('SelectFacturePdf');
 
-// Route::get('/ListesFactures',[FacturesController::class, "CreatedFacture"])->name('NewFacture');
-Route::post('/EditerFactures',[FacturesController::class, "CreateFacture"])->name('NewFacture');
-
-// Route::get('/EditerFactures',[FacturesController::class, "CreateFacture"])->name('NewFacture');
+Route::get('/EditerFactures',[FacturesController::class, "EditerFactures"]);//recuperer champs hopital et chauffeur
+Route::post('/EditerFactures',[FacturesController::class, "CreateFacture"])->name('NewFacture');//creer facture
 
 
 

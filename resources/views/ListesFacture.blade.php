@@ -189,7 +189,7 @@
                   <tr>
                     <td class="select-none px-4 py-3">{{ $facture->id}}</td>
                     <td class="select-none px-4 py-3">{{ $facture->nom }}</td>
-                    <td class="select-none px-4 py-3">{{ $facture->montant }}</td>
+                    <td class="select-none px-4 py-3">{{ $facture->Montant }}</td>
                     <td class="select-none px-4 py-3">{{ $facture->commentaires }}</td>
                     <td class="select-none px-4 py-3">{{ $facture->created_at }}</td>
 

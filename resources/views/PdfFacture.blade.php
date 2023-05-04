@@ -46,9 +46,9 @@
           </tr>
         </thead>
         <tbody>
-          {{--  @foreach($missions as $mission)  --}}
+          @foreach($missions as $mission)
           <tr>
-            {{--  <td class="no">{{$i}}</td>
+            <td class="no">{{$i}}</td>
             <td class="desc">
                 <span>{{$mission->nom}} {{$mission->prenom}}</span><br>
                 <span>{{$mission->adresse}} </span><br>
@@ -62,7 +62,7 @@
           </tr>
           {{$i=$i+1}}
           {{$prixht = $prixht + $mission->prix}}
-          @endforeach  --}}
+          @endforeach
 
         </tbody>
         {{--  <tfoot>

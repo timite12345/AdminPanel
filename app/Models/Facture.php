@@ -11,10 +11,11 @@ class Facture extends Model
       protected $fillable = [
         'nom',
         'hopital',
+        'idChauffeur',
         'email_patient',
         'email_hopital',
-        'montant',
-        'malade',
+        'Montant',
+        'Maladie',
         'commentaires'
     ];
 }
