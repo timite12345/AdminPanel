@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\MissionController;
 use App\Http\Controllers\API\HopitalController;
 use App\Http\Controllers\API\ChauffeurController;
-
+use App\Http\Controllers\API\HeureDebutController;
+use App\Http\Controllers\HeureFinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::apiResource('mission', MissionController::class);
 Route::apiResource('chauffeur', ChauffeurController::class);
 Route::apiResource('hopital', HopitalController::class);
 
+
+Route::put('/updateheuredeb/{id}', [HeureDebutController::class, 'updateheuredeb']);
+Route::put('/updateheurefin/{id}', [HeureFinController::class, 'updateheurefin']);

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('adresse_Arriv');
             $table->string('condTransp');
             $table->string('idChauffeur');
+            $table->string('heureDebut')->nullable();
             $table->timestamps();
     });
     }
