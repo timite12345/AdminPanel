@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('estUrgent');
-            $table->string('estFacture');
+            $table->string('estFacture')->default('true');
             $table->string('date_Dep');
             $table->string('adresse_Dep');
             $table->string('adresse_Arriv');
-            $table->string('condTransp');
+            $table->string('condTransp')->nullable();
             $table->string('idChauffeur');
             $table->string('heureDebut')->nullable();
             $table->string('heureFin')->nullable();

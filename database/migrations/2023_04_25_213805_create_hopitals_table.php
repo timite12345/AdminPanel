@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('hopitals', function (Blueprint $table) {
             $table->id();
-            //$table->string('refEtb');
             $table->string('nom');
             $table->string('adresse');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('tel');
-            //$table->string('estValide');
             $table->string('type');
             $table->timestamps();
         });

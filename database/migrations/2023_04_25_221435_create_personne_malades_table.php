@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('adresse');
             $table->string('contact');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('maladie');
             $table->timestamps();
         });

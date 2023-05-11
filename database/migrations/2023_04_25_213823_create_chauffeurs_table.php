@@ -16,7 +16,7 @@ return new class extends Migration
               $table->string('nom');
             $table->string('prenom');
             $table->string('tel');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('adresse');
             $table->string('permis');
             $table->boolean('estDisponible')->default(true);
