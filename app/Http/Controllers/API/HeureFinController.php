@@ -9,9 +9,9 @@ class HeureFinController extends Controller
 {
       public function updateheureFin( Request $request, $id){
          $mission= Mission::findOrFail($id);
-         $timestamp = date('Y-m-d H:i:s', strtotime($request->heureDeb));
+         $timestamp = date('Y-m-d H:i:s', strtotime($request->heureFin));
          $mission->update([
-        'heureDeb'=>$timestamp,
+        'heureFin'=>$timestamp,
     ]);
     }
 

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('condTransp');
             $table->string('idChauffeur');
             $table->string('heureDebut')->nullable();
+            $table->string('heureFin')->nullable();
             $table->timestamps();
     });
     }
