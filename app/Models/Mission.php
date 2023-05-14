@@ -22,4 +22,17 @@ class Mission extends Model
         'heureDebut',
         'heureFin',
     ];
+
+    public function chauffeur(){
+        return $this->belongsTo(Chauffeur::class);
+    }
+    public function vehicule(){
+        return $this->belongsTo(Vehicule::class);
+    }
+    public function facture(){
+        return $this->belongsTo(Facture::class);
+    }
+    public function mission(){
+        return $this->hasOne(Mission::class);
+    }
 }

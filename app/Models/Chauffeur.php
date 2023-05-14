@@ -17,5 +17,7 @@ class Chauffeur extends Model
         'permis',
         'estDisponible',
     ];
-
+  public function mission(){
+        return $this->hasMany(Transport::class);
+    }
 }

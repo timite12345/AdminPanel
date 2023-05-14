@@ -18,4 +18,14 @@ class Facture extends Model
         'Maladie',
         'commentaires'
     ];
+
+       public function hopital(){
+        return $this->belongsTo(Hopital::class);
+    }
+
+    public function mission(){
+        return $this->hasOne(Mission::class);
+    }
+
+
 }

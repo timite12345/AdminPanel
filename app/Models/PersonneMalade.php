@@ -16,4 +16,8 @@ class PersonneMalade extends Model
         'email',
         'maladie',
     ];
+
+      public function mission(){
+        return $this->belongsToMany(Mission::class);
+    }
 }

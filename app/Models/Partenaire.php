@@ -15,4 +15,11 @@ class Partenaire extends Model
         'permis',
         'estLibre',
     ];
+
+       public function mission(){
+        return $this->belongsToMany(Mission::class);
+    }
+    public function facture(){
+        return $this->hasMany(Facture::class);
+    }
 }

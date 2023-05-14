@@ -17,4 +17,14 @@ class Hopital extends Model
         'estValide',
         'type',
     ];
+  public function demandetransport(){
+        return $this->hasMany(Demande_Transp::class);
+    }
+
+    public function facture(){
+        return $this->hasMany(Facture::class);
+    }
+
+
+
 }
